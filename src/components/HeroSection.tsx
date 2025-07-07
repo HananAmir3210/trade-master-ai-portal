@@ -32,6 +32,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
+              onClick={() => window.location.href = '/auth'}
               className="bg-primary hover:bg-primary-dark text-dark font-semibold text-lg px-8 py-4 glow-effect group"
             >
               Start Free Trial
@@ -40,6 +41,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
+              onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-primary text-primary hover:bg-primary hover:text-dark text-lg px-8 py-4"
             >
               Watch Demo

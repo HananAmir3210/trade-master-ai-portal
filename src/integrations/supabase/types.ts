@@ -14,7 +14,119 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ai_analysis: {
+        Row: {
+          analysis_text: string
+          confidence_score: number | null
+          created_at: string
+          id: string
+          insights: Json | null
+          recommendations: string[] | null
+          trade_id: string
+        }
+        Insert: {
+          analysis_text: string
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          insights?: Json | null
+          recommendations?: string[] | null
+          trade_id: string
+        }
+        Update: {
+          analysis_text?: string
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          insights?: Json | null
+          recommendations?: string[] | null
+          trade_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_analysis_trade_id_fkey"
+            columns: ["trade_id"]
+            isOneToOne: false
+            referencedRelation: "trades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      trades: {
+        Row: {
+          chart_screenshot_url: string | null
+          created_at: string
+          entry_price: number
+          exit_price: number | null
+          id: string
+          lot_size: number
+          notes: string | null
+          status: string
+          timeframe: string
+          trade_pair: string
+          trade_type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          chart_screenshot_url?: string | null
+          created_at?: string
+          entry_price: number
+          exit_price?: number | null
+          id?: string
+          lot_size: number
+          notes?: string | null
+          status?: string
+          timeframe: string
+          trade_pair: string
+          trade_type: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          chart_screenshot_url?: string | null
+          created_at?: string
+          entry_price?: number
+          exit_price?: number | null
+          id?: string
+          lot_size?: number
+          notes?: string | null
+          status?: string
+          timeframe?: string
+          trade_pair?: string
+          trade_type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -39,8 +39,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary-dark text-dark font-semibold glow-effect">
-              Get Early Access
+            <Button 
+              onClick={() => window.location.href = '/auth'}
+              className="bg-primary hover:bg-primary-dark text-dark font-semibold glow-effect"
+            >
+              Get Started
             </Button>
           </div>
 
@@ -70,8 +73,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4">
-                <Button className="w-full bg-primary hover:bg-primary-dark text-dark font-semibold">
-                  Get Early Access
+                <Button 
+                  onClick={() => window.location.href = '/auth'}
+                  className="w-full bg-primary hover:bg-primary-dark text-dark font-semibold"
+                >
+                  Get Started
                 </Button>
               </div>
             </div>
