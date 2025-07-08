@@ -1,24 +1,38 @@
-
 import React from 'react';
 
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Main dark background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background" />
+      {/* Main gradient background - black to dark grey */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black" />
       
-      {/* Primary gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+      {/* Radial gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-radial from-gray-900/20 via-transparent to-transparent" />
       
-      {/* Floating gradient shapes */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 animate-float blur-xl" />
-      <div className="absolute top-40 right-20 w-24 h-24 rounded-full bg-gradient-to-r from-accent/30 to-primary/30 animate-float blur-xl" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-40 left-20 w-40 h-40 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 animate-float blur-xl" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-20 right-10 w-28 h-28 rounded-full bg-gradient-to-r from-accent/25 to-primary/25 animate-float blur-xl" style={{ animationDelay: '0.5s' }} />
+      {/* Subtle light effects */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/[0.015] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s', animationDelay: '4s' }} />
       
-      {/* Additional floating elements for depth */}
-      <div className="absolute top-1/3 left-1/3 w-16 h-16 rounded-full bg-primary/10 animate-float blur-lg" style={{ animationDelay: '3s' }} />
-      <div className="absolute bottom-1/3 right-1/3 w-20 h-20 rounded-full bg-accent/15 animate-float blur-lg" style={{ animationDelay: '4s' }} />
+      {/* Floating light orbs */}
+      <div className="absolute top-1/3 left-1/6 w-32 h-32 bg-white/[0.01] rounded-full blur-2xl floating-element" />
+      <div className="absolute bottom-1/3 right-1/6 w-24 h-24 bg-white/[0.008] rounded-full blur-2xl floating-element" style={{ animationDelay: '3s' }} />
+      <div className="absolute top-2/3 left-2/3 w-20 h-20 bg-white/[0.005] rounded-full blur-xl floating-element" style={{ animationDelay: '6s' }} />
+      
+      {/* Subtle grid pattern overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '100px 100px'
+        }}
+      />
+      
+      {/* Vignette effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
     </div>
   );
 };

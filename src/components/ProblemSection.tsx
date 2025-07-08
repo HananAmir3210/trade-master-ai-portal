@@ -5,63 +5,63 @@ import { AlertTriangle, TrendingDown, Brain, Target } from 'lucide-react';
 const ProblemSection = () => {
   const problems = [
     {
-      icon: <TrendingDown className="w-10 h-10 text-destructive" />,
+      icon: <TrendingDown className="w-8 h-8 text-white/30" />,
       title: "Inconsistent Performance",
       description: "Without proper tracking, traders repeat mistakes and struggle to identify what actually works."
     },
     {
-      icon: <AlertTriangle className="w-10 h-10 text-destructive" />,
+      icon: <AlertTriangle className="w-8 h-8 text-white/30" />,
       title: "Emotional Decision Making",
       description: "Fear and greed drive poor decisions. Most traders lack awareness of their psychological patterns."
     },
     {
-      icon: <Brain className="w-10 h-10 text-destructive" />,
+      icon: <Brain className="w-8 h-8 text-white/30" />,
       title: "No Strategic Evolution",
       description: "Static strategies fail in dynamic markets. Traders need adaptive, data-driven approach to improvement."
     },
     {
-      icon: <Target className="w-10 h-10 text-destructive" />,
+      icon: <Target className="w-8 h-8 text-white/30" />,
       title: "Lack of Systematic Review",
       description: "Most traders skip the crucial step of analyzing their trades, missing valuable insights for growth."
     }
   ];
 
   return (
-    <section className="section-spacing bg-background relative">
+    <section className="section-spacing relative">
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="text-center mb-24 animate-fade-in space-y-8">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Why 90% of Traders <span className="text-destructive">Fail</span>
+        <div className="text-center mb-20 animate-fade-in space-y-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white">
+            Why Most Traders <span className="text-white/50">Struggle</span>
           </h2>
-          <p className="subheadline-text text-muted-foreground max-w-4xl mx-auto">
-            The harsh reality: Most traders lack the systematic approach needed for consistent profitability. 
-            Here's what's holding them back.
+          <p className="subheadline-text max-w-3xl mx-auto">
+            Without proper systems and insights, even experienced traders face common challenges 
+            that limit their potential.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {problems.map((problem, index) => (
             <div 
               key={index}
-              className="premium-card rounded-3xl p-10 text-center premium-hover animate-scale-in group"
+              className="glass-effect rounded-2xl p-8 text-center premium-hover animate-scale-in group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="mb-8 flex justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="mb-6 flex justify-center opacity-60 group-hover:opacity-80 transition-opacity duration-300">
                 {problem.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-6 text-foreground group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg font-medium mb-4 text-white group-hover:text-white/90 transition-colors duration-300">
                 {problem.title}
               </h3>
-              <p className="body-text leading-relaxed">
+              <p className="body-text leading-relaxed text-sm">
                 {problem.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-24">
-          <p className="text-3xl md:text-4xl font-semibold text-muted-foreground">
-            It's time to <span className="gradient-text">break the cycle</span>
+        <div className="text-center mt-16">
+          <p className="text-2xl md:text-3xl font-medium text-white/70">
+            There's a <span className="text-white">better way</span>
           </p>
         </div>
       </div>
