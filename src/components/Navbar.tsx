@@ -14,22 +14,22 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold gradient-text">TradeMaster AI</h1>
+            <h1 className="text-3xl font-bold gradient-text tracking-tight">TradeMaster AI</h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-10">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-300 hover:text-primary transition-colors duration-200 px-3 py-2 text-sm font-medium"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium tracking-wide"
                 >
                   {item.label}
                 </a>
@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button 
               onClick={() => window.location.href = '/auth'}
-              className="bg-primary hover:bg-primary-dark text-dark font-semibold glow-effect"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold premium-glow transition-all duration-300 px-8 py-3 text-sm tracking-wide"
             >
               Get Started
             </Button>
@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-400 hover:text-white"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -61,12 +61,12 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dark-card rounded-lg mt-2">
+            <div className="px-6 pt-4 pb-6 space-y-3 premium-card rounded-2xl mt-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-300 hover:text-primary block px-3 py-2 text-base font-medium transition-colors duration-200"
+                  className="text-muted-foreground hover:text-foreground block px-4 py-3 text-base font-medium transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -75,7 +75,7 @@ const Navbar = () => {
               <div className="pt-4">
                 <Button 
                   onClick={() => window.location.href = '/auth'}
-                  className="w-full bg-primary hover:bg-primary-dark text-dark font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
                 >
                   Get Started
                 </Button>

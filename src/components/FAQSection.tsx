@@ -39,29 +39,29 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-dark">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section id="faq" className="section-spacing bg-background">
+      <div className="max-w-5xl mx-auto container-padding">
+        <div className="text-center mb-24 animate-fade-in space-y-8">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="subheadline-text text-muted-foreground">
             Everything you need to know about TradeMaster AI
           </p>
         </div>
 
         <div className="animate-fade-in">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-6">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-dark-card border border-gray-800 rounded-2xl px-6 data-[state=open]:border-primary/50 transition-colors"
+                className="premium-card rounded-3xl px-8 data-[state=open]:premium-glow transition-all duration-300"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-primary py-6">
+                <AccordionTrigger className="text-left text-xl font-semibold text-foreground hover:text-primary py-8 transition-colors duration-300">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300 pb-6">
+                <AccordionContent className="body-text pb-8">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -69,11 +69,11 @@ const FAQSection = () => {
           </Accordion>
         </div>
 
-        <div className="text-center mt-12 animate-fade-in">
-          <p className="text-gray-400 mb-4">Still have questions?</p>
+        <div className="text-center mt-20 animate-fade-in space-y-6">
+          <p className="text-xl text-muted-foreground">Still have questions?</p>
           <a 
             href="mailto:support@trademasterai.com"
-            className="text-primary hover:text-neon font-semibold transition-colors"
+            className="text-primary hover:text-accent font-semibold text-lg transition-colors duration-300"
           >
             Contact our support team
           </a>

@@ -5,73 +5,83 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
+    <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <div className="max-w-8xl mx-auto container-padding text-center">
+        <div className="animate-fade-in space-y-12">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
-            <TrendingUp className="w-4 h-4 mr-2" />
+          <div className="inline-flex items-center px-6 py-3 rounded-full subtle-border bg-card/30 text-accent text-sm font-medium tracking-wide">
+            <TrendingUp className="w-4 h-4 mr-3" />
             Early Access Available
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="gradient-text">AI-Powered</span>
-            <br />
-            Trading Mastery
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Transform your trading journey with intelligent strategy tracking, 
-            AI-driven insights, and psychological pattern analysis that turns 
-            every trade into a learning opportunity.
-          </p>
+          <div className="space-y-8">
+            <h1 className="headline-text">
+              <span className="gradient-text">AI-Powered</span>
+              <br />
+              <span className="text-foreground">Trading Mastery</span>
+            </h1>
+            
+            {/* Subheadline */}
+            <p className="subheadline-text text-muted-foreground max-w-4xl mx-auto">
+              Transform your trading journey with intelligent strategy tracking and AI-driven insights 
+              that turn every trade into a learning opportunity.
+            </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
               onClick={() => window.location.href = '/auth'}
-              className="bg-primary hover:bg-primary-dark text-dark font-semibold text-lg px-8 py-4 glow-effect group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-12 py-6 premium-glow group transition-all duration-300"
             >
               Start Free Trial
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-primary text-primary hover:bg-primary hover:text-dark text-lg px-8 py-4"
+              className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-lg px-12 py-6 transition-all duration-300"
             >
               Watch Demo
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center text-center">
-            <div className="flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-primary" />
-              <span className="text-gray-400">95% Success Rate Improvement</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto pt-16">
+            <div className="flex flex-col items-center gap-3">
+              <BarChart3 className="w-6 h-6 text-accent" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">95%</div>
+                <div className="text-sm text-muted-foreground">Success Rate Improvement</div>
+              </div>
             </div>
-            <div className="hidden md:block w-px h-6 bg-gray-600"></div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-primary" />
-              <span className="text-gray-400">10,000+ Trades Analyzed</span>
+            <div className="flex flex-col items-center gap-3">
+              <TrendingUp className="w-6 h-6 text-accent" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">10,000+</div>
+                <div className="text-sm text-muted-foreground">Trades Analyzed</div>
+              </div>
             </div>
-            <div className="hidden md:block w-px h-6 bg-gray-600"></div>
-            <div className="flex items-center gap-2">
-              <span className="text-primary font-bold">500+</span>
-              <span className="text-gray-400">Professional Traders</span>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-6 h-6 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">★</span>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">500+</div>
+                <div className="text-sm text-muted-foreground">Professional Traders</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+      {/* Minimal scroll indicator */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 floating-element">
+        <div className="w-1 h-12 bg-primary/30 rounded-full flex justify-center">
+          <div className="w-0.5 h-4 bg-primary rounded-full mt-1 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -9,44 +9,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 12 12 15; /* #0C0C0F */
-    --foreground: 255 255 255; /* #FFFFFF */
+    --background: 4 6 20; /* #04060D - Deep midnight blue */
+    --foreground: 248 249 250; /* #F8F9FA - Pure white with subtle warmth */
 
-    --card: 26 26 26; /* #1A1A1A */
-    --card-foreground: 255 255 255;
+    --card: 8 11 28; /* #080B1C - Deeper card background */
+    --card-foreground: 248 249 250;
 
-    --popover: 26 26 26;
-    --popover-foreground: 255 255 255;
+    --popover: 8 11 28;
+    --popover-foreground: 248 249 250;
 
-    --primary: 12 12 15;
-    --primary-foreground: 255 255 255;
+    --primary: 193 90 96; /* #C1B3F5 - Premium electric blue */
+    --primary-foreground: 4 6 20;
 
-    --secondary: 39 39 42;
-    --secondary-foreground: 255 255 255;
+    --secondary: 15 23 42; /* #0F172A - Subtle dark variant */
+    --secondary-foreground: 203 213 225;
 
-    --muted: 39 39 42;
-    --muted-foreground: 161 161 170;
+    --muted: 15 23 42;
+    --muted-foreground: 148 163 184;
 
-    --accent: 39 39 42;
-    --accent-foreground: 255 255 255;
+    --accent: 186 85 211; /* #50E3C2 - Teal accent */
+    --accent-foreground: 4 6 20;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 255 255 255;
+    --destructive: 0 84 60;
+    --destructive-foreground: 248 249 250;
 
-    --border: 39 39 42;
-    --input: 39 39 42;
-    --ring: 0 200 150; /* #00C896 */
+    --border: 30 41 59; /* #1E293B - Subtle borders */
+    --input: 15 23 42;
+    --ring: 193 90 96;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 12 12 15;
-    --sidebar-foreground: 255 255 255;
-    --sidebar-primary: 0 200 150;
-    --sidebar-primary-foreground: 12 12 15;
-    --sidebar-accent: 39 39 42;
-    --sidebar-accent-foreground: 255 255 255;
-    --sidebar-border: 39 39 42;
-    --sidebar-ring: 0 200 150;
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(193 90 96), hsl(186 85 211));
+    --gradient-background: linear-gradient(180deg, hsl(4 6 20), hsl(8 11 28));
+    --gradient-card: linear-gradient(145deg, hsl(8 11 28), hsl(15 23 42));
+    
+    /* Premium shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(4 6 20 / 0.25);
+    --shadow-glow: 0 0 40px hsl(193 90 96 / 0.15);
+    --shadow-teal-glow: 0 0 30px hsl(186 85 211 / 0.2);
+
+    --sidebar-background: 4 6 20;
+    --sidebar-foreground: 248 249 250;
+    --sidebar-primary: 193 90 96;
+    --sidebar-primary-foreground: 4 6 20;
+    --sidebar-accent: 15 23 42;
+    --sidebar-accent-foreground: 248 249 250;
+    --sidebar-border: 30 41 59;
+    --sidebar-ring: 193 90 96;
   }
 }
 
@@ -56,8 +66,9 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-dark text-white font-inter antialiased;
-    background: #0C0C0F;
+    @apply bg-background text-foreground font-inter antialiased;
+    background: var(--gradient-background);
+    min-height: 100vh;
   }
 
   html {
@@ -67,38 +78,80 @@ All colors MUST be HSL.
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-neon bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+    @apply bg-clip-text text-transparent;
   }
 
-  .glow-effect {
-    box-shadow: 0 0 20px rgba(0, 200, 150, 0.3);
+  .premium-glow {
+    box-shadow: var(--shadow-glow);
   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20;
+  .teal-glow {
+    box-shadow: var(--shadow-teal-glow);
+  }
+
+  .premium-card {
+    background: var(--gradient-card);
+    @apply border border-border backdrop-blur-sm;
+    box-shadow: var(--shadow-premium);
+  }
+
+  .premium-hover {
+    @apply transition-all duration-500 ease-out hover:scale-[1.02] hover:-translate-y-1;
+    &:hover {
+      box-shadow: var(--shadow-premium), var(--shadow-glow);
+    }
+  }
+
+  .section-spacing {
+    @apply py-32 lg:py-40;
+  }
+
+  .container-padding {
+    @apply px-6 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .headline-text {
+    @apply text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-none;
+  }
+
+  .subheadline-text {
+    @apply text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed;
+  }
+
+  .body-text {
+    @apply text-lg leading-relaxed text-muted-foreground;
   }
 
   .animated-bg {
-    background: linear-gradient(45deg, #0C0C0F, #111111, #0C0C0F);
+    background: var(--gradient-background);
     background-size: 400% 400%;
-    animation: gradient-shift 8s ease infinite;
+    animation: gradient-shift 12s ease infinite;
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .subtle-border {
+    @apply border border-border/50 backdrop-blur-md;
   }
 }
 
-/* Custom scrollbar */
+/* Premium scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0C0C0F;
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00C896;
-  border-radius: 4px;
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00FFAA;
+  background: hsl(var(--primary) / 0.5);
 }
