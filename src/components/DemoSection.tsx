@@ -21,7 +21,7 @@ const DemoSection = () => {
           
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-12 py-6 premium-glow group transition-all duration-300"
+            className="professional-button text-lg px-12 py-6 group"
           >
             <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
             Watch Live Demo
@@ -30,16 +30,16 @@ const DemoSection = () => {
 
         {/* Premium demo visual */}
         <div className="relative mb-24 animate-scale-in">
-          <div className="premium-card rounded-3xl p-4 premium-glow">
+          <div className="premium-card rounded-3xl p-4 professional-glow">
             <div className="relative rounded-2xl overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&h=800&fit=crop"
                 alt="TradeMaster AI Dashboard Demo"
                 className="w-full h-auto"
               />
-              {/* Premium play button overlay */}
+              {/* Professional play button overlay */}
               <div className="absolute inset-0 bg-background/60 backdrop-blur-sm flex items-center justify-center group cursor-pointer hover:bg-background/40 transition-all duration-300">
-                <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform premium-glow">
+                <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center group-hover:scale-105 transition-transform professional-glow">
                   <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
                 </div>
               </div>

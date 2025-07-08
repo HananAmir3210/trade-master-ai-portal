@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button 
               onClick={() => window.location.href = '/auth'}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold premium-glow transition-all duration-300 px-8 py-3 text-sm tracking-wide"
+              className="professional-button px-8 py-3 text-sm tracking-wide"
             >
               Get Started
             </Button>

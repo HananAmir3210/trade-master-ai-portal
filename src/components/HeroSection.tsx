@@ -34,7 +34,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               onClick={() => window.location.href = '/auth'}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-12 py-6 premium-glow group transition-all duration-300"
+              className="professional-button text-lg px-12 py-6 group"
             >
               Start Free Trial
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
