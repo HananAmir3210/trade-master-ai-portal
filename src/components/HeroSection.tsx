@@ -5,73 +5,73 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 px-4">
+    <section className="relative min-h-screen flex items-center justify-center pt-20">
       <div className="max-w-8xl mx-auto container-padding text-center">
-        <div className="animate-fade-in space-y-16">
+        <div className="animate-fade-in space-y-12">
           {/* Badge */}
-          <div className="inline-flex items-center px-6 py-3 rounded-full glass-effect text-white/70 text-sm font-normal tracking-wide">
-            <TrendingUp className="w-4 h-4 mr-3 text-white/50" />
-            Now Available
+          <div className="inline-flex items-center px-6 py-3 rounded-full subtle-border bg-card/30 text-accent text-sm font-medium tracking-wide">
+            <TrendingUp className="w-4 h-4 mr-3" />
+            Early Access Available
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             <h1 className="headline-text">
-              <span className="text-white">AI-Powered</span>
+              <span className="gradient-text">AI-Powered</span>
               <br />
-              <span className="gradient-text">Trading Intelligence</span>
+              <span className="text-foreground">Trading Mastery</span>
             </h1>
             
             {/* Subheadline */}
-            <p className="subheadline-text max-w-4xl mx-auto">
-              Advanced analytics and machine learning transform your trading decisions. 
-              Professional-grade insights for the modern trader.
+            <p className="subheadline-text text-muted-foreground max-w-4xl mx-auto">
+              Transform your trading journey with intelligent strategy tracking and AI-driven insights 
+              that turn every trade into a learning opportunity.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
               onClick={() => window.location.href = '/auth'}
-              className="professional-button text-base px-10 py-4 group rounded-full"
+              className="professional-button text-lg px-12 py-6 group"
             >
-              Get Started
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Start Free Trial
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
-              className="accent-button text-base px-10 py-4 rounded-full transition-all duration-300"
+              className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-lg px-12 py-6 transition-all duration-300"
             >
-              Learn More
+              Watch Demo
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-5xl mx-auto pt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto pt-16">
             <div className="flex flex-col items-center gap-3">
-              <BarChart3 className="w-5 h-5 text-white/40" />
+              <BarChart3 className="w-6 h-6 text-accent" />
               <div className="text-center">
-                <div className="text-3xl font-semibold text-white tracking-tight">95%</div>
-                <div className="text-sm text-white/50 font-normal">Accuracy Rate</div>
+                <div className="text-2xl font-bold text-foreground">95%</div>
+                <div className="text-sm text-muted-foreground">Success Rate Improvement</div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3">
-              <TrendingUp className="w-5 h-5 text-white/40" />
+              <TrendingUp className="w-6 h-6 text-accent" />
               <div className="text-center">
-                <div className="text-3xl font-semibold text-white tracking-tight">10K+</div>
-                <div className="text-sm text-white/50 font-normal">Trades Analyzed</div>
+                <div className="text-2xl font-bold text-foreground">10,000+</div>
+                <div className="text-sm text-muted-foreground">Trades Analyzed</div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3">
-              <div className="w-5 h-5 flex items-center justify-center">
-                <span className="text-white/40 font-normal text-base">★</span>
+              <div className="w-6 h-6 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">★</span>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-semibold text-white tracking-tight">500+</div>
-                <div className="text-sm text-white/50 font-normal">Active Users</div>
+                <div className="text-2xl font-bold text-foreground">500+</div>
+                <div className="text-sm text-muted-foreground">Professional Traders</div>
               </div>
             </div>
           </div>
@@ -79,9 +79,9 @@ const HeroSection = () => {
       </div>
 
       {/* Minimal scroll indicator */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 floating-element">
-        <div className="w-px h-16 bg-white/20 rounded-full flex justify-center">
-          <div className="w-px h-6 bg-white/40 rounded-full mt-2 animate-pulse"></div>
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 floating-element">
+        <div className="w-1 h-12 bg-primary/30 rounded-full flex justify-center">
+          <div className="w-0.5 h-4 bg-primary rounded-full mt-1 animate-pulse"></div>
         </div>
       </div>
     </section>
