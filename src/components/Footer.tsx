@@ -5,16 +5,16 @@ import { Twitter, Linkedin, Mail, MessageCircle } from 'lucide-react';
 const Footer = () => {
   const footerLinks = {
     Product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'Demo', href: '#demo' },
-      { name: 'API', href: '#' }
+      { name: 'Features', href: '/features' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Demo', href: '/demo' },
+      { name: 'API', href: '/api' }
     ],
     Company: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
+      { name: 'About', href: '/about' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Careers', href: '#' },
-      { name: 'Contact', href: '#' }
+      { name: 'Contact', href: '/contact' }
     ],
     Support: [
       { name: 'Help Center', href: '#' },
